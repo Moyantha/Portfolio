@@ -102,6 +102,25 @@ footer {
   margin-top: 3rem;
 }
 
+/* Code-style Headings */
+h1, h2 {
+  font-family: 'Source Code Pro', monospace;
+  color: #39FF14;                 /* neon green */
+  background: #1E1E1E;            /* dark-grey bar like a code editor gutter */
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  display: inline-block;          /* shrink-wrap to text */
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Optional: simulate code comments for your tagline */
+.tagline {
+  font-family: 'Source Code Pro', monospace;
+  color: #6A9955;                 /* muted green comment color */
+  font-style: normal;
+}
+
 /* MOBILE */
 @media (max-width: 600px) {
   .tabs button { flex: 1 1 50%; }
