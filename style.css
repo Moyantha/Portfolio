@@ -1,126 +1,139 @@
-/* style.css */
-body {
-  margin: 0;
-  background: #0D0D0D;
-  color: #E0E0E0;
-  font-family: 'Segoe UI', sans-serif;
-  overflow-x: hidden;
-}
-canvas {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: -1;
-}
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Moyantha Ayair | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+  <!-- Code font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Your custom styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Matrix Rain Background -->
+  <canvas id="matrix"></canvas>
 
-/* HEADER */
-header {
-  text-align: center;
-  padding: 4rem 1rem;
-  background: #1A1A1A;
-}
-.profile-pic {
-  width: 150px; height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #00FF00;
-}
-h1 {
-  margin: .5rem 0; font-size: 3rem;
-}
-.tagline {
-  color: #AAA; font-style: italic;
-}
+  <!-- Header -->
+  <header>
+    <img src="images/profile.jpg" class="profile-pic" alt="Moyantha Ayair">
+    <h1>&lt;MoyanthaAyair/&gt;</h1>
+    <p class="tagline">// coding with curiosity, building with heart</p>
+  </header>
 
-/* TABS */
-.tabs {
-  display: flex;
-  justify-content: center;
-  background: #121212;
-  flex-wrap: wrap;
-}
-.tabs button {
-  background: none;
-  border: none;
-  padding: 1rem 1.5rem;
-  color: #E0E0E0;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: border-bottom .3s;
-  border-bottom: 2px solid transparent;
-}
-.tabs button.active,
-.tabs button:hover {
-  border-bottom: 2px solid #00FF00;
-}
+  <!-- Tab Navigation -->
+  <nav class="tabs">
+    <button class="active" data-tab="about">&lt;About&gt;</button>
+    <button data-tab="education">&lt;Education&gt;</button>
+    <button data-tab="skills">&lt;Skills&gt;</button>
+    <button data-tab="projects">&lt;Projects&gt;</button>
+    <button data-tab="social">&lt;Social&gt;</button>
+    <button data-tab="languages">&lt;Langs&gt;</button>
+  </nav>
 
-/* MAIN CONTENT */
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 2rem 1rem;
-}
-.container section {
-  display: none;
-}
-.container section.active {
-  display: block;
-}
-h2 {
-  color: #00FF00;
-  margin-bottom: 1rem;
-}
-ul {
-  padding-left: 1.5rem;
-}
+  <!-- Tab Contents -->
+  <main class="container">
+    <section id="about" class="active">
+      <h2>&lt;AboutMe&gt;</h2>
+      <p>Hey! I'm Moyantha—a CS student who codes with confidence and debugs with grace. Passionate about AI, clean code, and making tech that <em>actually does something cool</em>.</p>
+    </section>
 
-/* SOCIAL & LANGUAGES */
-.social-icons a {
-  margin: 0 .8rem;
-  color: #E0E0E0;
-  font-size: 2rem;
-  transition: color .2s;
-}
-.social-icons a:hover {
-  color: #00FF00;
-}
-.languages-icons i {
-  font-size: 3rem;
-  margin: 0 .8rem;
-  transition: transform .2s;
-}
-.languages-icons i:hover {
-  transform: scale(1.1);
-}
+    <section id="education">
+      <h2>&lt;Education&gt;</h2>
+      <ul>
+        <li><strong>UKZN</strong> – BSc Computer Science &amp; IT (2024–Present)</li>
+        <li><strong>Kharwastan Secondary</strong> – NSC (2019–2023): 5 distinctions, IT award</li>
+        <li><strong>Willow Park Primary</strong> – Prefect, Amesa (2017–2018)</li>
+        <li><strong>Westville Hindu Primary</strong> – Prefect, Top 3 Academic (2009–2017)</li>
+      </ul>
+    </section>
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 2rem 0;
-  background: #121212;
-  color: #666;
-  margin-top: 3rem;
-}
+    <section id="skills">
+      <h2>&lt;Skills&gt;</h2>
+      <ul>
+        <li>Java • Python • C++ • JavaScript</li>
+        <li>Office Suite (Word, Excel, PowerPoint, Access)</li>
+        <li>Fluent: English, Tamil, Afrikaans, Zulu</li>
+        <li>Leadership &amp; Teamwork</li>
+        <li>Lean Six Sigma – White Belt</li>
+      </ul>
+    </section>
 
-/* Code-style Headings */
-h1, h2 {
-  font-family: 'Source Code Pro', monospace;
-  color: #39FF14;                 /* neon green */
-  background: #1E1E1E;            /* dark-grey bar like a code editor gutter */
-  padding: 0.2em 0.6em;
-  border-radius: 4px;
-  display: inline-block;          /* shrink-wrap to text */
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
+    <section id="projects">
+      <h2>&lt;Projects&gt;</h2>
+      <p><em>No projects yet—stay tuned!</em></p>
+    </section>
 
-/* Optional: simulate code comments for your tagline */
-.tagline {
-  font-family: 'Source Code Pro', monospace;
-  color: #6A9955;                 /* muted green comment color */
-  font-style: normal;
-}
+    <section id="social">
+      <h2>&lt;Social&gt;</h2>
+      <div class="social-icons">
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/your-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:moyanthaayair@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </section>
 
+    <section id="languages">
+      <h2>&lt;Langs&gt;</h2>
+      <div class="languages-icons">
+        <i class="devicon-python-plain colored" title="Python"></i>
+        <i class="devicon-java-plain colored" title="Java"></i>
+        <i class="devicon-cplusplus-plain colored" title="C++"></i>
+        <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with &lt;3 by Moyantha Ayair</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Matrix Rain
+    const canvas = document.getElementById('matrix'),
+          ctx = canvas.getContext('2d');
+    let w = canvas.width = innerWidth,
+        h = canvas.height = innerHeight,
+        cols = Math.floor(w / 16),
+        drops = Array(cols).fill(0);
+
+    function draw() {
+      ctx.fillStyle = 'rgba(0,0,0,0.05)';
+      ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = '#0F0';
+      ctx.font = '16px monospace';
+      drops.forEach((y, i) => {
+        const ch = String.fromCharCode(0x30A0 + Math.random() * 96);
+        ctx.fillText(ch, i * 16, y * 16);
+        drops[i] = y * 16 > h && Math.random() > 0.975 ? 0 : y + 1;
+      });
+    }
+    setInterval(draw, 50);
+    addEventListener('resize', () => {
+      w = canvas.width = innerWidth;
+      h = canvas.height = innerHeight;
+      cols = Math.floor(w / 16);
+      drops = Array(cols).fill(0);
+    });
+
+    // Tabs
+    document.querySelectorAll('.tabs button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        document.querySelector('.tabs button.active').classList.remove('active');
+        btn.classList.add('active');
+        document.querySelector('.container section.active').classList.remove('active');
+        document.getElementById(tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
 /* MOBILE */
 @media (max-width: 600px) {
   .tabs button { flex: 1 1 50%; }
