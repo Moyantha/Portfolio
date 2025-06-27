@@ -18,10 +18,13 @@
   <canvas id="matrix"></canvas>
 
   <header class="terminal-header">
-    <span class="green-text">print("Welcome to Moyantha’s Digital Domain✨")</span><span class="blinking-cursor">|</span>
-    <h1>&lt;Moyantha Ayair/&gt;</h1>
-    <p class="tagline"># coding with curiosity, building with heart👩‍💻</p>
-    <img src="images/profile.jpg" alt="Moyantha" class="profile-pic" />
+    <span class="green-text">moyantha@portfolio:~$</span><span class="blinking-cursor">|</span>
+
+    <div class="profile-header">
+      <img src="images/profile.jpg" class="profile-pic" alt="Moyantha Ayair" />
+      <h1>&lt;MoyanthaAyair/&gt;</h1>
+      <p class="tagline"># coding with curiosity, building with heart</p>
+    </div>
   </header>
 
   <nav class="tabs">
@@ -34,12 +37,12 @@
   </nav>
 
   <main class="container">
-    <section id="about" class="tab-content active reveal">
+    <section id="about" class="tab-content active">
       <h2>&lt;About Me&gt;</h2>
       <p>I'm Moyantha — CS student, AI enthusiast, and terminal tab queen. I code clean, build bold, and debug like a boss.</p>
     </section>
 
-    <section id="education" class="tab-content reveal">
+    <section id="education" class="tab-content">
       <h2>&lt;Education&gt;</h2>
       <ul>
         <li><strong>UKZN</strong> – BSc Computer Science & IT (2024–Present)</li>
@@ -49,7 +52,7 @@
       </ul>
     </section>
 
-    <section id="skills" class="tab-content reveal">
+    <section id="skills" class="tab-content">
       <h2>&lt;Skills&gt;</h2>
       <ul>
         <li>Java • Python • C++ • JavaScript</li>
@@ -60,12 +63,12 @@
       </ul>
     </section>
 
-    <section id="projects" class="tab-content reveal">
+    <section id="projects" class="tab-content">
       <h2>&lt;Projects&gt;</h2>
       <p><em>No projects yet — stay tuned!</em></p>
     </section>
 
-    <section id="social" class="tab-content reveal">
+    <section id="social" class="tab-content">
       <h2>&lt;Social&gt;</h2>
       <div class="social-icons">
         <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
@@ -74,7 +77,7 @@
       </div>
     </section>
 
-    <section id="languages" class="tab-content reveal">
+    <section id="languages" class="tab-content">
       <h2>&lt;Languages&gt;</h2>
       <div class="languages-icons">
         <i class="devicon-python-plain colored" title="Python"></i>
@@ -89,7 +92,6 @@
     <p>made with &lt;/&gt; by Moyantha Ayair</p>
   </footer>
 
-  <!-- Scripts -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // Matrix Rain
@@ -147,19 +149,6 @@
           document.getElementById(btn.dataset.tab).classList.add('active');
         });
       });
-
-      // Reveal Animations
-      const revealElements = document.querySelectorAll('.reveal');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      revealElements.forEach(el => observer.observe(el));
     });
   </script>
 </body>
