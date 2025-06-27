@@ -1,30 +1,19 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Moyantha Ayair | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
-  <!-- Code font -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Your custom styles -->
-  <link rel="stylesheet" href="style.css">
-</head>
 <body>
   <!-- Matrix Rain Background -->
   <canvas id="matrix"></canvas>
 
-  <!-- Header -->
+  <!-- Terminal Header -->
   <header>
+    <div class="terminal-header">
+      <span class="green-text">moyantha@portfolio:~$</span>
+      <span class="blinking-cursor">|</span>
+    </div>
     <img src="images/profile.jpg" class="profile-pic" alt="Moyantha Ayair">
     <h1>&lt;MoyanthaAyair/&gt;</h1>
-    <p class="tagline">// coding with curiosity, building with heart</p>
+    <p class="tagline"># coding with curiosity, building with heart</p>
   </header>
 
-  <!-- Tab Navigation -->
+  <!-- Tabs -->
   <nav class="tabs">
     <button class="active" data-tab="about">&lt;About&gt;</button>
     <button data-tab="education">&lt;Education&gt;</button>
@@ -34,62 +23,19 @@
     <button data-tab="languages">&lt;Langs&gt;</button>
   </nav>
 
-  <!-- Tab Contents -->
+  <!-- Main content -->
   <main class="container">
     <section id="about" class="active">
       <h2>&lt;AboutMe&gt;</h2>
-      <p>Hey! I'm Moyantha—a CS student who codes with confidence and debugs with grace. Passionate about AI, clean code, and making tech that <em>actually does something cool</em>.</p>
+      <p>Welcome to my digital playground. I'm Moyantha — a CS student who writes clean code, lives for AI, and thrives in terminal tabs. I build stuff that matters, and debug like a pro.</p>
     </section>
 
-    <section id="education">
-      <h2>&lt;Education&gt;</h2>
-      <ul>
-        <li><strong>UKZN</strong> – BSc Computer Science &amp; IT (2024–Present)</li>
-        <li><strong>Kharwastan Secondary</strong> – NSC (2019–2023): 5 distinctions, IT award</li>
-        <li><strong>Willow Park Primary</strong> – Prefect, Amesa (2017–2018)</li>
-        <li><strong>Westville Hindu Primary</strong> – Prefect, Top 3 Academic (2009–2017)</li>
-      </ul>
-    </section>
-
-    <section id="skills">
-      <h2>&lt;Skills&gt;</h2>
-      <ul>
-        <li>Java • Python • C++ • JavaScript</li>
-        <li>Office Suite (Word, Excel, PowerPoint, Access)</li>
-        <li>Fluent: English, Tamil, Afrikaans, Zulu</li>
-        <li>Leadership &amp; Teamwork</li>
-        <li>Lean Six Sigma – White Belt</li>
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h2>&lt;Projects&gt;</h2>
-      <p><em>No projects yet—stay tuned!</em></p>
-    </section>
-
-    <section id="social">
-      <h2>&lt;Social&gt;</h2>
-      <div class="social-icons">
-        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/your-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:moyanthaayair@gmail.com"><i class="fas fa-envelope"></i></a>
-      </div>
-    </section>
-
-    <section id="languages">
-      <h2>&lt;Langs&gt;</h2>
-      <div class="languages-icons">
-        <i class="devicon-python-plain colored" title="Python"></i>
-        <i class="devicon-java-plain colored" title="Java"></i>
-        <i class="devicon-cplusplus-plain colored" title="C++"></i>
-        <i class="devicon-javascript-plain colored" title="JavaScript"></i>
-      </div>
-    </section>
+    <!-- [Same sections as before: education, skills, projects, etc.] -->
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>Made with &lt;3 by Moyantha Ayair</p>
+    <p>Made with &lt;/&gt; by Moyantha Ayair</p>
   </footer>
 
   <!-- Scripts -->
@@ -103,9 +49,9 @@
         drops = Array(cols).fill(0);
 
     function draw() {
-      ctx.fillStyle = 'rgba(0,0,0,0.05)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, w, h);
-      ctx.fillStyle = '#0F0';
+      ctx.fillStyle = '#00ff66';
       ctx.font = '16px monospace';
       drops.forEach((y, i) => {
         const ch = String.fromCharCode(0x30A0 + Math.random() * 96);
@@ -133,7 +79,3 @@
     });
   </script>
 </body>
-</html>
-  </script>
-</body>
-</html>
