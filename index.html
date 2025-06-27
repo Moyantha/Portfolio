@@ -5,23 +5,23 @@
   <meta charset="UTF-8">
   <title>Moyantha Ayair | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- FontAwesome + Devicon for icons -->
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Matrix Rain Background -->
+  <!-- Matrix Rain -->
   <canvas id="matrix"></canvas>
 
   <header>
-    <img src="images/profile.jpg" alt="Moyantha Ayair" class="profile-pic">
+    <img src="images/profile.jpg" class="profile-pic" alt="Moyantha Ayair">
     <h1>Moyantha Ayair</h1>
     <p class="tagline">Coding with curiosity, building with heart 💻✨</p>
   </header>
 
-  <!-- Tab Navigation -->
+  <!-- Tabs -->
   <nav class="tabs">
     <button class="active" data-tab="about">About</button>
     <button data-tab="education">Education</button>
@@ -31,29 +31,28 @@
     <button data-tab="languages">Languages</button>
   </nav>
 
-  <!-- Tab Contents -->
-  <div class="tab-content container">
+  <main class="container">
     <section id="about" class="active">
       <h2>About Me</h2>
-      <p>Hey! I'm Moyantha — a computer science student who codes with confidence and debugs with grace. I'm passionate about AI, clean code, and building tech that actually <em>does something cool</em>. Currently exploring the weird and wonderful world of software development — and having fun along the way.</p>
+      <p>Hey! I'm Moyantha — a CS student who codes with confidence and debugs with grace. Passionate about AI, clean code, and making tech that actually <em>does something cool</em>.</p>
     </section>
 
     <section id="education">
       <h2>Education</h2>
       <ul>
-        <li><strong>UKZN</strong> – BSc in Computer Science & IT (2024 – Present)</li>
-        <li><strong>Kharwastan Secondary</strong> – NSC (2019–2023): 5 distinctions, IT award, Deputy RCL</li>
-        <li><strong>Willow Park Primary</strong> – Prefect, Conquesta, Amesa (2017–2018)</li>
-        <li><strong>Westville Hindu Primary</strong> – Prefect, Top 3 Academic, Challenge (2009–2017)</li>
+        <li><strong>UKZN</strong> – BSc Computer Science & IT (2024–Present)</li>
+        <li><strong>Kharwastan Secondary</strong> – NSC (2019–2023): 5 distinctions, IT award</li>
+        <li><strong>Willow Park Primary</strong> – Prefect, Amesa (2017–2018)</li>
+        <li><strong>Westville Hindu Primary</strong> – Prefect, Top 3 Academic (2009–2017)</li>
       </ul>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
       <ul>
-        <li>Java, Python, C++, JavaScript</li>
-        <li>Microsoft Office Suite (Word, Excel, PowerPoint, Access)</li>
-        <li>Fluent in English, Tamil, Afrikaans & Zulu</li>
+        <li>Java • Python • C++ • JavaScript</li>
+        <li>Office Suite (Word, Excel, PowerPoint, Access)</li>
+        <li>Fluent: English, Tamil, Afrikaans, Zulu</li>
         <li>Leadership & Teamwork</li>
         <li>Lean Six Sigma – White Belt</li>
       </ul>
@@ -65,66 +64,64 @@
     </section>
 
     <section id="social">
-      <h2>Connect with Me</h2>
+      <h2>Connect</h2>
       <div class="social-icons">
         <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/your-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="mailto:moyanthaayair@gmail.com"><i class="fas fa-envelope"></i></a>
       </div>
     </section>
 
     <section id="languages">
-      <h2>Coding Languages</h2>
+      <h2>Languages</h2>
       <div class="languages-icons">
-        <i class="devicon-python-plain-wordmark colored" title="Python"></i>
-        <i class="devicon-java-plain-wordmark colored" title="Java"></i>
+        <i class="devicon-python-plain colored" title="Python"></i>
+        <i class="devicon-java-plain colored" title="Java"></i>
         <i class="devicon-cplusplus-plain colored" title="C++"></i>
         <i class="devicon-javascript-plain colored" title="JavaScript"></i>
       </div>
     </section>
-  </div>
+  </main>
 
   <footer>
     <p>Made with 💖 by Moyantha Ayair</p>
   </footer>
 
   <script>
-    // Matrix Rain
+    // MATRIX RAIN
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
-    let w = canvas.width = window.innerWidth;
-    let h = canvas.height = window.innerHeight;
+    let w = canvas.width = innerWidth;
+    let h = canvas.height = innerHeight;
     const cols = Math.floor(w / 16);
     const drops = Array(cols).fill(0);
-    function drawMatrix() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-      ctx.fillRect(0, 0, w, h);
+    function draw() {
+      ctx.fillStyle = 'rgba(0,0,0,0.05)';
+      ctx.fillRect(0,0,w,h);
       ctx.fillStyle = '#0F0';
       ctx.font = '16px monospace';
-      for (let i = 0; i < cols; i++) {
-        const char = String.fromCharCode(0x30A0 + Math.random() * 96);
-        ctx.fillText(char, i * 16, drops[i] * 16);
-        if (drops[i] * 16 > h && Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
-      }
+      drops.forEach((y, i) => {
+        const ch = String.fromCharCode(0x30A0 + Math.random()*96);
+        ctx.fillText(ch, i*16, y*16);
+        drops[i] = y*16 > h && Math.random()>0.975 ? 0 : y+1;
+      });
     }
-    setInterval(drawMatrix, 50);
-    window.addEventListener('resize', () => {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
+    setInterval(draw, 50);
+    addEventListener('resize', () => {
+      w = canvas.width = innerWidth;
+      h = canvas.height = innerHeight;
     });
 
-    // Tab Switching
+    // TAB LOGIC
     document.querySelectorAll('.tabs button').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelector('.tabs button.active').classList.remove('active');
+        const tgt = btn.dataset.tab;
+        document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+        document.querySelectorAll('main.container section').forEach(s=>s.classList.remove('active'));
         btn.classList.add('active');
-        document.querySelector('.tab-content section.active').classList.remove('active');
-        document.getElementById(btn.dataset.tab).classList.add('active');
+        document.getElementById(tgt).classList.add('active');
       });
     });
   </script>
-
 </body>
 </html>
