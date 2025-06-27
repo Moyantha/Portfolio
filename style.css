@@ -1,44 +1,42 @@
 /* style.css */
 body {
   margin: 0;
-  background: #121212;
+  background: #0D0D0D;
   color: #E0E0E0;
   font-family: 'Segoe UI', sans-serif;
   overflow-x: hidden;
 }
 canvas {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   z-index: -1;
 }
 
-/* Header */
+/* HEADER */
 header {
   text-align: center;
   padding: 4rem 1rem;
+  background: #1A1A1A;
 }
 .profile-pic {
-  width: 150px;
-  height: 150px;
+  width: 150px; height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #00FF00;
+  border: 3px solid #00FF00;
 }
 h1 {
-  margin: 0.5rem 0;
-  font-size: 3rem;
+  margin: .5rem 0; font-size: 3rem;
 }
 .tagline {
-  color: #AAA;
-  font-style: italic;
+  color: #AAA; font-style: italic;
 }
 
-/* Tabs */
+/* TABS */
 .tabs {
   display: flex;
   justify-content: center;
-  background: #1E1E1E;
+  background: #121212;
   flex-wrap: wrap;
 }
 .tabs button {
@@ -48,25 +46,24 @@ h1 {
   color: #E0E0E0;
   cursor: pointer;
   font-size: 1rem;
-  transition: border-bottom 0.3s;
+  transition: border-bottom .3s;
   border-bottom: 2px solid transparent;
 }
-.tabs button:hover,
-.tabs button.active {
+.tabs button.active,
+.tabs button:hover {
   border-bottom: 2px solid #00FF00;
 }
 
-/* Content */
+/* MAIN CONTENT */
 .container {
   max-width: 900px;
   margin: auto;
-  padding: 0 1rem;
+  padding: 2rem 1rem;
 }
-.tab-content section {
+.container section {
   display: none;
-  margin-top: 2rem;
 }
-.tab-content section.active {
+.container section.active {
   display: block;
 }
 h2 {
@@ -77,11 +74,11 @@ ul {
   padding-left: 1.5rem;
 }
 
-/* Social & Languages */
+/* SOCIAL & LANGUAGES */
 .social-icons a {
-  margin: 0 .7rem;
-  font-size: 1.8rem;
+  margin: 0 .8rem;
   color: #E0E0E0;
+  font-size: 2rem;
   transition: color .2s;
 }
 .social-icons a:hover {
@@ -89,25 +86,23 @@ ul {
 }
 .languages-icons i {
   font-size: 3rem;
-  margin: 0 .7rem;
+  margin: 0 .8rem;
   transition: transform .2s;
 }
 .languages-icons i:hover {
   transform: scale(1.1);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 2rem 0;
-  background: #1E1E1E;
+  background: #121212;
+  color: #666;
   margin-top: 3rem;
-  color: #777;
 }
 
-/* Responsive Tabs */
+/* MOBILE */
 @media (max-width: 600px) {
-  .tabs button {
-    flex: 1 1 50%;
-  }
+  .tabs button { flex: 1 1 50%; }
 }
