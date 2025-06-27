@@ -93,31 +93,49 @@
     <p>made with &lt;/&gt; by Moyantha Ayair</p>
   </footer>
 
-  <!-- Matrix Script + Tabs -->
-  <script>
+  <!--Java Script-->
+ <script>
+  document.addEventListener("DOMContentLoaded", () => {
     // Matrix Rain
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
-    let w = canvas.width = window.innerWidth;
-    let h = canvas.height = window.innerHeight;
+    let w = window.innerWidth;
+    let h = window.innerHeight;
+
+    const scale = window.devicePixelRatio || 1;
+    canvas.width = w * scale;
+    canvas.height = h * scale;
+    canvas.style.width = w + "px";
+    canvas.style.height = h + "px";
+    ctx.scale(scale, scale);
+
     let cols = Math.floor(w / 16);
     let drops = Array(cols).fill(0);
+
+    ctx.textBaseline = 'top';
+    ctx.textAlign = 'center';
+    ctx.font = 'bold 16px monospace';
 
     function drawMatrix() {
       ctx.fillStyle = 'rgba(0,0,0,0.05)';
       ctx.fillRect(0, 0, w, h);
       ctx.fillStyle = '#00ff66';
-      ctx.font = '16px monospace';
       drops.forEach((y, i) => {
         const text = String.fromCharCode(0x30A0 + Math.random() * 96);
-        ctx.fillText(text, i * 16, y * 16);
+        ctx.fillText(text, i * 16 + 8, y * 16);
         drops[i] = y * 16 > h && Math.random() > 0.975 ? 0 : y + 1;
       });
     }
     setInterval(drawMatrix, 50);
+
     window.addEventListener('resize', () => {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
+      w = window.innerWidth;
+      h = window.innerHeight;
+      canvas.width = w * scale;
+      canvas.height = h * scale;
+      canvas.style.width = w + "px";
+      canvas.style.height = h + "px";
+      ctx.scale(scale, scale);
       cols = Math.floor(w / 16);
       drops = Array(cols).fill(0);
     });
@@ -133,6 +151,7 @@
         document.getElementById(btn.dataset.tab).classList.add('active');
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
