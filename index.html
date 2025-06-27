@@ -1,120 +1,130 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Moyantha Ayair | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- FontAwesome + Devicon for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Matrix Rain Background -->
+  <canvas id="matrix"></canvas>
+
   <header>
-    <div class="container">
-      <img src="images/profile.jpg" alt="Moyantha Ayair" class="profile-pic">
-      <h1>Moyantha Ayair</h1>
-      <p class="tagline">Coding with curiosity, building with heart 💻✨</p>
-    </div>
+    <img src="images/profile.jpg" alt="Moyantha Ayair" class="profile-pic">
+    <h1>Moyantha Ayair</h1>
+    <p class="tagline">Coding with curiosity, building with heart 💻✨</p>
   </header>
 
-  <main class="container">
-    <section>
+  <!-- Tab Navigation -->
+  <nav class="tabs">
+    <button class="active" data-tab="about">About</button>
+    <button data-tab="education">Education</button>
+    <button data-tab="skills">Skills</button>
+    <button data-tab="projects">Projects</button>
+    <button data-tab="social">Social</button>
+    <button data-tab="languages">Languages</button>
+  </nav>
+
+  <!-- Tab Contents -->
+  <div class="tab-content container">
+    <section id="about" class="active">
       <h2>About Me</h2>
-      <p>I'm a passionate Computer Science student at UKZN with a love for coding, problem-solving, and tech that makes life better. Indian-South African, multilingual, and always ready to adapt, lead, and learn. I believe in writing code with personality — clean, clever, and creative.</p>
+      <p>Hey! I'm Moyantha — a computer science student who codes with confidence and debugs with grace. I'm passionate about AI, clean code, and building tech that actually <em>does something cool</em>. Currently exploring the weird and wonderful world of software development — and having fun along the way.</p>
     </section>
 
-    <section>
+    <section id="education">
       <h2>Education</h2>
       <ul>
         <li><strong>UKZN</strong> – BSc in Computer Science & IT (2024 – Present)</li>
-        <li><strong>Kharwastan Secondary</strong> – NSC (2019–2023): 5 distinctions, IT award, Deputy RCL, AdMaths (91% internal)</li>
-        <li><strong>Willow Park Primary</strong> – Prefect, Conquesta, Amesa, Youth Leadership (2017–2018)</li>
-        <li><strong>Westville Hindu Primary</strong> – Prefect, Top 3 academic, Conquesta, Challenge (2009–2017)</li>
+        <li><strong>Kharwastan Secondary</strong> – NSC (2019–2023): 5 distinctions, IT award, Deputy RCL</li>
+        <li><strong>Willow Park Primary</strong> – Prefect, Conquesta, Amesa (2017–2018)</li>
+        <li><strong>Westville Hindu Primary</strong> – Prefect, Top 3 Academic, Challenge (2009–2017)</li>
       </ul>
     </section>
 
-    <section>
+    <section id="skills">
       <h2>Skills</h2>
       <ul>
-        <li>Computer Programming (Java, Python)</li>
-        <li>Microsoft Word, Excel, PowerPoint, Access</li>
-        <li>Social Media Savvy</li>
-        <li>Fluent in English, Tamil, Afrikaans, Zulu</li>
+        <li>Java, Python, C++, JavaScript</li>
+        <li>Microsoft Office Suite (Word, Excel, PowerPoint, Access)</li>
+        <li>Fluent in English, Tamil, Afrikaans & Zulu</li>
         <li>Leadership & Teamwork</li>
-        <li>Lean Six Sigma – White Belt Certified</li>
+        <li>Lean Six Sigma – White Belt</li>
       </ul>
     </section>
 
-    <section>
-      <h2>Extra Curriculars</h2>
-      <ul>
-        <li>Figure Skating (2016–2018): Skills Level 3 – Toti Seals</li>
-        <li>Swimming (2009–2019): Pisces, Bayview, Croftdene Clubs</li>
-        <li>Dancing (2017–2020): Trained under Krish Swamivel & Leona Dean</li>
-        <li>Toastmasters Youth Leadership Program (2016)</li>
-        <li>Annual school events: Concerts, Fun Runs, Sports Days</li>
-      </ul>
+    <section id="projects">
+      <h2>Projects</h2>
+      <p><em>No projects yet—stay tuned!</em></p>
     </section>
 
-    <section>
-      <h2>References</h2>
-      <ul>
-        <li>Dr VR Jugoo – IT Tutor</li>
-        <li>EC Moodley – IT Educator</li>
-        <li>Email: <a href="mailto:vikash@mut.ac.za">vikash@mut.ac.za</a></li>
-      </ul>
+    <section id="social">
+      <h2>Connect with Me</h2>
+      <div class="social-icons">
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/your-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="mailto:moyanthaayair@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:moyanthaayair@gmail.com">moyanthaayair@gmail.com</a></p>
-      <p>Phone: 081 392 2540 / 061 995 7031</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/your-link" target="_blank">linkedin.com/in/your-link</a></p>
+    <section id="languages">
+      <h2>Coding Languages</h2>
+      <div class="languages-icons">
+        <i class="devicon-python-plain-wordmark colored" title="Python"></i>
+        <i class="devicon-java-plain-wordmark colored" title="Java"></i>
+        <i class="devicon-cplusplus-plain colored" title="C++"></i>
+        <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+      </div>
     </section>
-  </main>
+  </div>
 
   <footer>
     <p>Made with 💖 by Moyantha Ayair</p>
   </footer>
 
-</body>
-</html>
+  <script>
+    // Matrix Rain
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+    const cols = Math.floor(w / 16);
+    const drops = Array(cols).fill(0);
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = '#0F0';
+      ctx.font = '16px monospace';
+      for (let i = 0; i < cols; i++) {
+        const char = String.fromCharCode(0x30A0 + Math.random() * 96);
+        ctx.fillText(char, i * 16, drops[i] * 16);
+        if (drops[i] * 16 > h && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(drawMatrix, 50);
+    window.addEventListener('resize', () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    });
 
-
-  <section>
-    <h2>About Me</h2>
-    <p>Hey! I'm Moyantha — a computer science student who codes with confidence and debugs with grace. I'm passionate about AI, clean code, and building tech that actually *does something cool*. Currently exploring the weird and wonderful world of software development — and having fun along the way.</p>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-
-    <div class="project">
-      <h3>Java Matrix Analyzer</h3>
-      <p>A university project where I created a program that finds unique and common numbers across matrix rows (a.k.a. Dlamini Numbers!).</p>
-      <a href="https://github.com/yourusername/project-link">View on GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>AI-Enhanced To-Do App</h3>
-      <p>Combining task management with basic ML to create a smarter productivity app. Still in progress but already ✨ kinda awesome.</p>
-      <a href="https://github.com/yourusername/project-link">View on GitHub</a>
-    </div>
-
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <p>Want to connect or collaborate?</p>
-    <ul>
-      <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-      <li>GitHub: <a href="https://github.com/yourusername">@yourusername</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/yourusername">linkedin.com/in/yourusername</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>Made with 💻 and a little ✨ by Moyantha</p>
-  </footer>
+    // Tab Switching
+    document.querySelectorAll('.tabs button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelector('.tabs button.active').classList.remove('active');
+        btn.classList.add('active');
+        document.querySelector('.tab-content section.active').classList.remove('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
