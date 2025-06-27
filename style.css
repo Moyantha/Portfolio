@@ -1,3 +1,26 @@
+/* Terminal Style Header */
+.terminal-header {
+  font-family: 'Source Code Pro', monospace;
+  background: #0d1117;
+  color: #00ff66;
+  font-size: 1rem;
+  text-align: left;
+  padding: 0.7rem 1.5rem;
+  border-bottom: 1px solid #30363d;
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 10px;
+  background: #00ff66;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1 }
+  50% { opacity: 0 }
+}
+
 /* GENERAL */
 body {
   margin: 0;
