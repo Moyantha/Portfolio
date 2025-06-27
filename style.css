@@ -8,28 +8,29 @@
 body {
   margin: 0;
   font-family: 'Source Code Pro', monospace;
-  background: #0d1117;
-  color: #c9d1d9;
+  background: #0d1117; /* Very dark */
+  color: #e0e0e0; /* Light gray for better contrast */
   overflow-x: hidden;
 }
 
 h1, h2 {
-  color: #58a6ff;
+  color: #00ffff; /* Neon cyan */
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   text-shadow:
-    0 0 5px #58a6ff,
-    0 0 10px #9b59b6; /* purple glow */
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff;
 }
 
 a {
-  color: #ff6ac1; /* pink base */
+  color: #ff00ff; /* Neon magenta */
   text-decoration: none;
   transition: 0.2s ease;
 }
 a:hover {
-  color: #ff9f43; /* orange hover */
-  text-shadow: 0 0 7px #ff9f43;
+  color: #ff4500; /* Bright orange red */
+  text-shadow: 0 0 10px #ff4500;
 }
 
 /* ========== TERMINAL HEADER ========== */
@@ -42,12 +43,12 @@ a:hover {
   position: relative;
 }
 .green-text {
-  color: #00ff66; /* lime green for terminal prompt */
+  color: #39ff14; /* Neon green */
 }
 .blinking-cursor {
   display: inline-block;
   width: 10px;
-  background: #00ff66;
+  background: #39ff14;
   animation: blink 1s steps(1) infinite;
 }
 @keyframes blink {
@@ -55,19 +56,25 @@ a:hover {
   50% { opacity: 0; }
 }
 
-/* Rainbow animation on header name */
-@keyframes rainbow {
-  0%, 100% { color: #58a6ff; }
-  20% { color: #ff6ac1; }
-  40% { color: #ff9f43; }
-  60% { color: #2ed573; }
-  80% { color: #9b59b6; }
+/* Neon rainbow animation on header name */
+@keyframes neonRainbow {
+  0%, 100% { color: #00ffff; }
+  20% { color: #ff00ff; }
+  40% { color: #ff4500; }
+  60% { color: #39ff14; }
+  80% { color: #ffff00; }
 }
 
 header h1 {
   font-size: 2.5rem;
   text-align: center;
-  animation: rainbow 8s ease-in-out infinite;
+  animation: neonRainbow 6s ease-in-out infinite;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 15px #ff00ff,
+    0 0 20px #ff4500,
+    0 0 30px #39ff14,
+    0 0 40px #ffff00;
 }
 
 /* ========== PROFILE STYLING ========== */
@@ -79,14 +86,18 @@ header h1 {
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #30363d;
-  box-shadow: 0 0 10px #00ff66;
+  box-shadow:
+    0 0 15px #39ff14,
+    0 0 30px #00ffff;
 }
 .tagline {
   font-style: italic;
   text-align: center;
   font-size: 0.95rem;
-  color: #ff6ac1; /* pink */
-  text-shadow: 0 0 4px #ff6ac1;
+  color: #ff00ff;
+  text-shadow:
+    0 0 8px #ff00ff,
+    0 0 15px #ff00ff;
   margin-top: 0.5rem;
 }
 
@@ -104,16 +115,19 @@ header h1 {
   color: #c9d1d9;
   padding: 0.8rem 1.5rem;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: 0.3s;
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
 }
 .tabs button.active,
 .tabs button:hover {
-  color: #ff9f43; /* orange active/hover */
-  border-color: #ff9f43;
-  text-shadow: 0 0 8px #ff9f43;
+  color: #39ff14;
+  border-color: #39ff14;
+  text-shadow:
+    0 0 10px #39ff14,
+    0 0 20px #39ff14;
+  font-weight: 900;
 }
 
 /* ========== CONTENT ========== */
@@ -150,15 +164,15 @@ ul li {
   margin-top: 1rem;
 }
 .social-icons a {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin: 0 1rem;
   color: #8b949e;
   transition: 0.3s ease;
 }
 .social-icons a:hover {
-  color: #2ed573; /* teal/cyan */
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 5px #2ed573);
+  color: #ff00ff;
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 10px #ff00ff);
 }
 
 /* ========== LANGUAGES ========== */
@@ -167,15 +181,15 @@ ul li {
   margin-top: 1rem;
 }
 .languages-icons i {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 0.8rem;
   transition: transform 0.3s ease, color 0.3s ease;
-  color: #8b949e; /* base neutral */
+  color: #8b949e;
 }
 .languages-icons i:hover {
-  transform: scale(1.3);
-  color: #9b59b6; /* purple */
-  filter: drop-shadow(0 0 8px #9b59b6);
+  transform: scale(1.4);
+  color: #00ffff;
+  filter: drop-shadow(0 0 15px #00ffff);
 }
 
 /* ========== FOOTER ========== */
@@ -196,7 +210,7 @@ canvas#matrix {
   z-index: -1;
   width: 100vw;
   height: 100vh;
-  opacity: 0.07;
+  opacity: 0.1;
   pointer-events: none;
 }
 
