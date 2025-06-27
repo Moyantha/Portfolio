@@ -1,76 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moyantha Ayair | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Icons -->
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
-  <!-- Code Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Your Custom Styles -->
-  <link rel="stylesheet" href="style.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Matrix Rain Background -->
+  <!-- Matrix Background -->
   <canvas id="matrix"></canvas>
 
-  <!-- Terminal Header -->
-  <header>
-    <div class="terminal-header">
-      <span class="green-text">moyantha@portfolio:~$</span>
-      <span class="blinking-cursor">|</span>
-    </div>
-    <img src="images/profile.jpg" class="profile-pic" alt="Moyantha Ayair">
+  <!-- Terminal Style Header -->
+  <header class="terminal-header">
+    <span class="green-text">moyantha@portfolio:~$</span><span class="blinking-cursor">|</span>
     <h1>&lt;MoyanthaAyair/&gt;</h1>
     <p class="tagline"># coding with curiosity, building with heart</p>
+    <img src="images/profile.jpg" alt="Moyantha" class="profile-pic" />
   </header>
 
   <!-- Tabs -->
   <nav class="tabs">
-    <button class="active" data-tab="about">&lt;About&gt;</button>
-    <button data-tab="education">&lt;Education&gt;</button>
-    <button data-tab="skills">&lt;Skills&gt;</button>
-    <button data-tab="projects">&lt;Projects&gt;</button>
-    <button data-tab="social">&lt;Social&gt;</button>
-    <button data-tab="languages">&lt;Langs&gt;</button>
+    <button class="tab-btn active" data-tab="about">About</button>
+    <button class="tab-btn" data-tab="education">Education</button>
+    <button class="tab-btn" data-tab="skills">Skills</button>
+    <button class="tab-btn" data-tab="projects">Projects</button>
+    <button class="tab-btn" data-tab="social">Social</button>
+    <button class="tab-btn" data-tab="languages">Languages</button>
   </nav>
 
-  <!-- Content Sections -->
+  <!-- Tab Content -->
   <main class="container">
-    <section id="about" class="active">
-      <h2>&lt;AboutMe&gt;</h2>
-      <p>Welcome to my digital playground. I'm Moyantha — a CS student who writes clean code, lives for AI, and thrives in terminal tabs. I build stuff that matters, and debug like a pro.</p>
+    <section id="about" class="tab-content active">
+      <h2>&lt;About Me&gt;</h2>
+      <p>I'm Moyantha — CS student, AI enthusiast, and terminal tab queen. I code clean, build bold, and debug like a boss.</p>
     </section>
 
-    <section id="education">
+    <section id="education" class="tab-content">
       <h2>&lt;Education&gt;</h2>
       <ul>
-        <li><strong>UKZN</strong> – BSc Computer Science &amp; IT (2024–Present)</li>
+        <li><strong>UKZN</strong> – BSc Computer Science & IT (2024–Present)</li>
         <li><strong>Kharwastan Secondary</strong> – NSC (2019–2023): 5 distinctions, IT award</li>
         <li><strong>Willow Park Primary</strong> – Prefect, Amesa (2017–2018)</li>
         <li><strong>Westville Hindu Primary</strong> – Prefect, Top 3 Academic (2009–2017)</li>
       </ul>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="tab-content">
       <h2>&lt;Skills&gt;</h2>
       <ul>
         <li>Java • Python • C++ • JavaScript</li>
         <li>Office Suite (Word, Excel, PowerPoint, Access)</li>
-        <li>Fluent: English, Tamil, Afrikaans, Zulu</li>
-        <li>Leadership &amp; Teamwork</li>
+        <li>Fluent in: English, Tamil, Afrikaans, Zulu</li>
+        <li>Leadership & Teamwork</li>
         <li>Lean Six Sigma – White Belt</li>
       </ul>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="tab-content">
       <h2>&lt;Projects&gt;</h2>
-      <p><em>No projects yet—stay tuned!</em></p>
+      <p><em>No projects yet — stay tuned!</em></p>
     </section>
 
-    <section id="social">
+    <section id="social" class="tab-content">
       <h2>&lt;Social&gt;</h2>
       <div class="social-icons">
         <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
@@ -79,8 +77,8 @@
       </div>
     </section>
 
-    <section id="languages">
-      <h2>&lt;Langs&gt;</h2>
+    <section id="languages" class="tab-content">
+      <h2>&lt;Languages&gt;</h2>
       <div class="languages-icons">
         <i class="devicon-python-plain colored" title="Python"></i>
         <i class="devicon-java-plain colored" title="Java"></i>
@@ -92,46 +90,47 @@
 
   <!-- Footer -->
   <footer>
-    <p>Made with &lt;/&gt; by Moyantha Ayair</p>
+    <p>made with &lt;/&gt; by Moyantha Ayair</p>
   </footer>
 
-  <!-- Matrix Rain & Tabs Script -->
+  <!-- Matrix Script + Tabs -->
   <script>
     // Matrix Rain
-    const canvas = document.getElementById('matrix'),
-          ctx = canvas.getContext('2d');
-    let w = canvas.width = innerWidth,
-        h = canvas.height = innerHeight,
-        cols = Math.floor(w / 16),
-        drops = Array(cols).fill(0);
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+    let cols = Math.floor(w / 16);
+    let drops = Array(cols).fill(0);
 
-    function draw() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0,0,0,0.05)';
       ctx.fillRect(0, 0, w, h);
       ctx.fillStyle = '#00ff66';
       ctx.font = '16px monospace';
       drops.forEach((y, i) => {
-        const ch = String.fromCharCode(0x30A0 + Math.random() * 96);
-        ctx.fillText(ch, i * 16, y * 16);
+        const text = String.fromCharCode(0x30A0 + Math.random() * 96);
+        ctx.fillText(text, i * 16, y * 16);
         drops[i] = y * 16 > h && Math.random() > 0.975 ? 0 : y + 1;
       });
     }
-    setInterval(draw, 50);
-    addEventListener('resize', () => {
-      w = canvas.width = innerWidth;
-      h = canvas.height = innerHeight;
+    setInterval(drawMatrix, 50);
+    window.addEventListener('resize', () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
       cols = Math.floor(w / 16);
       drops = Array(cols).fill(0);
     });
 
     // Tabs
-    document.querySelectorAll('.tabs button').forEach(btn => {
+    const buttons = document.querySelectorAll('.tab-btn');
+    const tabs = document.querySelectorAll('.tab-content');
+    buttons.forEach(btn => {
       btn.addEventListener('click', () => {
-        const tab = btn.dataset.tab;
-        document.querySelector('.tabs button.active').classList.remove('active');
+        buttons.forEach(b => b.classList.remove('active'));
+        tabs.forEach(t => t.classList.remove('active'));
         btn.classList.add('active');
-        document.querySelector('.container section.active').classList.remove('active');
-        document.getElementById(tab).classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
       });
     });
   </script>
