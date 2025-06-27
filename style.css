@@ -1,140 +1,164 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Moyantha Ayair | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
-  <!-- Code font -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Your custom styles -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Matrix Rain Background -->
-  <canvas id="matrix"></canvas>
+/* GENERAL */
+body {
+  margin: 0;
+  font-family: 'Source Code Pro', monospace;
+  background: #0d1117;
+  color: #c9d1d9;
+  overflow-x: hidden;
+}
 
-  <!-- Header -->
-  <header>
-    <img src="images/profile.jpg" class="profile-pic" alt="Moyantha Ayair">
-    <h1>&lt;MoyanthaAyair/&gt;</h1>
-    <p class="tagline">// coding with curiosity, building with heart</p>
-  </header>
+h1, h2 {
+  color: #58a6ff;
+  margin-top: 0;
+}
 
-  <!-- Tab Navigation -->
-  <nav class="tabs">
-    <button class="active" data-tab="about">&lt;About&gt;</button>
-    <button data-tab="education">&lt;Education&gt;</button>
-    <button data-tab="skills">&lt;Skills&gt;</button>
-    <button data-tab="projects">&lt;Projects&gt;</button>
-    <button data-tab="social">&lt;Social&gt;</button>
-    <button data-tab="languages">&lt;Langs&gt;</button>
-  </nav>
+a {
+  color: #8b949e;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
 
-  <!-- Tab Contents -->
-  <main class="container">
-    <section id="about" class="active">
-      <h2>&lt;AboutMe&gt;</h2>
-      <p>Hey! I'm Moyantha—a CS student who codes with confidence and debugs with grace. Passionate about AI, clean code, and making tech that <em>actually does something cool</em>.</p>
-    </section>
+a:hover {
+  color: #58a6ff;
+  text-shadow: 0 0 5px #58a6ff;
+}
 
-    <section id="education">
-      <h2>&lt;Education&gt;</h2>
-      <ul>
-        <li><strong>UKZN</strong> – BSc Computer Science &amp; IT (2024–Present)</li>
-        <li><strong>Kharwastan Secondary</strong> – NSC (2019–2023): 5 distinctions, IT award</li>
-        <li><strong>Willow Park Primary</strong> – Prefect, Amesa (2017–2018)</li>
-        <li><strong>Westville Hindu Primary</strong> – Prefect, Top 3 Academic (2009–2017)</li>
-      </ul>
-    </section>
+/* HEADER */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  box-shadow: 0 0 10px rgba(90, 255, 90, 0.05);
+}
 
-    <section id="skills">
-      <h2>&lt;Skills&gt;</h2>
-      <ul>
-        <li>Java • Python • C++ • JavaScript</li>
-        <li>Office Suite (Word, Excel, PowerPoint, Access)</li>
-        <li>Fluent: English, Tamil, Afrikaans, Zulu</li>
-        <li>Leadership &amp; Teamwork</li>
-        <li>Lean Six Sigma – White Belt</li>
-      </ul>
-    </section>
+.profile-pic {
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border: 3px solid #30363d;
+  box-shadow: 0 0 12px #0f0;
+}
 
-    <section id="projects">
-      <h2>&lt;Projects&gt;</h2>
-      <p><em>No projects yet—stay tuned!</em></p>
-    </section>
+.tagline {
+  font-style: italic;
+  color: #8b949e;
+  font-size: 0.95rem;
+}
 
-    <section id="social">
-      <h2>&lt;Social&gt;</h2>
-      <div class="social-icons">
-        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/your-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:moyanthaayair@gmail.com"><i class="fas fa-envelope"></i></a>
-      </div>
-    </section>
+/* NAV */
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #0d1117;
+  border-bottom: 1px solid #21262d;
+}
 
-    <section id="languages">
-      <h2>&lt;Langs&gt;</h2>
-      <div class="languages-icons">
-        <i class="devicon-python-plain colored" title="Python"></i>
-        <i class="devicon-java-plain colored" title="Java"></i>
-        <i class="devicon-cplusplus-plain colored" title="C++"></i>
-        <i class="devicon-javascript-plain colored" title="JavaScript"></i>
-      </div>
-    </section>
-  </main>
+.tabs button {
+  background: none;
+  border: none;
+  color: #c9d1d9;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+}
 
-  <!-- Footer -->
-  <footer>
-    <p>Made with &lt;3 by Moyantha Ayair</p>
-  </footer>
+.tabs button.active,
+.tabs button:hover {
+  color: #58a6ff;
+  border-color: #58a6ff;
+}
 
-  <!-- Scripts -->
-  <script>
-    // Matrix Rain
-    const canvas = document.getElementById('matrix'),
-          ctx = canvas.getContext('2d');
-    let w = canvas.width = innerWidth,
-        h = canvas.height = innerHeight,
-        cols = Math.floor(w / 16),
-        drops = Array(cols).fill(0);
+/* MAIN */
+.container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
 
-    function draw() {
-      ctx.fillStyle = 'rgba(0,0,0,0.05)';
-      ctx.fillRect(0, 0, w, h);
-      ctx.fillStyle = '#0F0';
-      ctx.font = '16px monospace';
-      drops.forEach((y, i) => {
-        const ch = String.fromCharCode(0x30A0 + Math.random() * 96);
-        ctx.fillText(ch, i * 16, y * 16);
-        drops[i] = y * 16 > h && Math.random() > 0.975 ? 0 : y + 1;
-      });
-    }
-    setInterval(draw, 50);
-    addEventListener('resize', () => {
-      w = canvas.width = innerWidth;
-      h = canvas.height = innerHeight;
-      cols = Math.floor(w / 16);
-      drops = Array(cols).fill(0);
-    });
+section {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
 
-    // Tabs
-    document.querySelectorAll('.tabs button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const tab = btn.dataset.tab;
-        document.querySelector('.tabs button.active').classList.remove('active');
-        btn.classList.add('active');
-        document.querySelector('.container section.active').classList.remove('active');
-        document.getElementById(tab).classList.add('active');
-      });
-    });
-  </script>
-</body>
-</html>
+section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #30363d;
+  color: #d2dfff;
+}
+
+/* SOCIAL */
+.social-icons a {
+  font-size: 1.5rem;
+  margin: 0 0.8rem;
+  color: #8b949e;
+  transition: 0.2s;
+}
+
+.social-icons a:hover {
+  color: #0f0;
+}
+
+/* LANGUAGES */
+.languages-icons i {
+  font-size: 2rem;
+  margin: 0.8rem;
+  transition: 0.2s ease;
+}
+
+.languages-icons i:hover {
+  transform: scale(1.2);
+  color: #58a6ff;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: #6e7681;
+  background: #161b22;
+  border-top: 1px solid #30363d;
+}
+
+/* MATRIX CANVAS */
+canvas#matrix {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
 /* MOBILE */
 @media (max-width: 600px) {
-  .tabs button { flex: 1 1 50%; }
+  .tabs button {
+    flex: 1 1 48%;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
 }
