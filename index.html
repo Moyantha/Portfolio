@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Moyantha Ayair | Portfolio</title>
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Matrix Background -->
   <canvas id="matrix"></canvas>
 
-  <!-- Terminal Style Header -->
   <header class="terminal-header">
     <span class="green-text">moyantha@portfolio:~$</span><span class="blinking-cursor">|</span>
     <h1>&lt;MoyanthaAyair/&gt;</h1>
@@ -25,7 +24,6 @@
     <img src="images/profile.jpg" alt="Moyantha" class="profile-pic" />
   </header>
 
-  <!-- Tabs -->
   <nav class="tabs">
     <button class="tab-btn active" data-tab="about">About</button>
     <button class="tab-btn" data-tab="education">Education</button>
@@ -35,14 +33,13 @@
     <button class="tab-btn" data-tab="languages">Languages</button>
   </nav>
 
-  <!-- Tab Content -->
   <main class="container">
-    <section id="about" class="tab-content active">
+    <section id="about" class="tab-content active reveal">
       <h2>&lt;About Me&gt;</h2>
       <p>I'm Moyantha — CS student, AI enthusiast, and terminal tab queen. I code clean, build bold, and debug like a boss.</p>
     </section>
 
-    <section id="education" class="tab-content">
+    <section id="education" class="tab-content reveal">
       <h2>&lt;Education&gt;</h2>
       <ul>
         <li><strong>UKZN</strong> – BSc Computer Science & IT (2024–Present)</li>
@@ -52,7 +49,7 @@
       </ul>
     </section>
 
-    <section id="skills" class="tab-content">
+    <section id="skills" class="tab-content reveal">
       <h2>&lt;Skills&gt;</h2>
       <ul>
         <li>Java • Python • C++ • JavaScript</li>
@@ -63,12 +60,12 @@
       </ul>
     </section>
 
-    <section id="projects" class="tab-content">
+    <section id="projects" class="tab-content reveal">
       <h2>&lt;Projects&gt;</h2>
       <p><em>No projects yet — stay tuned!</em></p>
     </section>
 
-    <section id="social" class="tab-content">
+    <section id="social" class="tab-content reveal">
       <h2>&lt;Social&gt;</h2>
       <div class="social-icons">
         <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
@@ -77,7 +74,7 @@
       </div>
     </section>
 
-    <section id="languages" class="tab-content">
+    <section id="languages" class="tab-content reveal">
       <h2>&lt;Languages&gt;</h2>
       <div class="languages-icons">
         <i class="devicon-python-plain colored" title="Python"></i>
@@ -88,70 +85,82 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>made with &lt;/&gt; by Moyantha Ayair</p>
   </footer>
 
-  <!--Java Script-->
- <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Matrix Rain
-    const canvas = document.getElementById('matrix');
-    const ctx = canvas.getContext('2d');
-    let w = window.innerWidth;
-    let h = window.innerHeight;
+  <!-- Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Matrix Rain
+      const canvas = document.getElementById('matrix');
+      const ctx = canvas.getContext('2d');
+      let w = window.innerWidth;
+      let h = window.innerHeight;
+      const scale = window.devicePixelRatio || 1;
 
-    const scale = window.devicePixelRatio || 1;
-    canvas.width = w * scale;
-    canvas.height = h * scale;
-    canvas.style.width = w + "px";
-    canvas.style.height = h + "px";
-    ctx.scale(scale, scale);
-
-    let cols = Math.floor(w / 16);
-    let drops = Array(cols).fill(0);
-
-    ctx.textBaseline = 'top';
-    ctx.textAlign = 'center';
-    ctx.font = 'bold 16px monospace';
-
-    function drawMatrix() {
-      ctx.fillStyle = 'rgba(0,0,0,0.05)';
-      ctx.fillRect(0, 0, w, h);
-      ctx.fillStyle = '#00ff66';
-      drops.forEach((y, i) => {
-        const text = String.fromCharCode(0x30A0 + Math.random() * 96);
-        ctx.fillText(text, i * 16 + 8, y * 16);
-        drops[i] = y * 16 > h && Math.random() > 0.975 ? 0 : y + 1;
-      });
-    }
-    setInterval(drawMatrix, 50);
-
-    window.addEventListener('resize', () => {
-      w = window.innerWidth;
-      h = window.innerHeight;
       canvas.width = w * scale;
       canvas.height = h * scale;
       canvas.style.width = w + "px";
       canvas.style.height = h + "px";
       ctx.scale(scale, scale);
-      cols = Math.floor(w / 16);
-      drops = Array(cols).fill(0);
-    });
+      ctx.textBaseline = 'top';
+      ctx.textAlign = 'center';
+      ctx.font = 'bold 16px monospace';
 
-    // Tabs
-    const buttons = document.querySelectorAll('.tab-btn');
-    const tabs = document.querySelectorAll('.tab-content');
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        tabs.forEach(t => t.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById(btn.dataset.tab).classList.add('active');
+      let cols = Math.floor(w / 16);
+      let drops = Array(cols).fill(0);
+
+      function drawMatrix() {
+        ctx.fillStyle = 'rgba(0,0,0,0.05)';
+        ctx.fillRect(0, 0, w, h);
+        ctx.fillStyle = '#00ff66';
+        drops.forEach((y, i) => {
+          const text = String.fromCharCode(0x30A0 + Math.random() * 96);
+          ctx.fillText(text, i * 16 + 8, y * 16);
+          drops[i] = y * 16 > h && Math.random() > 0.975 ? 0 : y + 1;
+        });
+      }
+
+      setInterval(drawMatrix, 50);
+
+      window.addEventListener('resize', () => {
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = w * scale;
+        canvas.height = h * scale;
+        canvas.style.width = w + "px";
+        canvas.style.height = h + "px";
+        ctx.scale(scale, scale);
+        cols = Math.floor(w / 16);
+        drops = Array(cols).fill(0);
       });
+
+      // Tabs
+      const buttons = document.querySelectorAll('.tab-btn');
+      const tabs = document.querySelectorAll('.tab-content');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => b.classList.remove('active'));
+          tabs.forEach(t => t.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById(btn.dataset.tab).classList.add('active');
+        });
+      });
+
+      // Reveal Animations
+      const revealElements = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      revealElements.forEach(el => observer.observe(el));
     });
-  });
-</script>
+  </script>
 </body>
 </html>
