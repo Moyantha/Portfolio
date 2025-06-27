@@ -68,14 +68,12 @@ a:hover {
 header h1 {
   font-size: 2.5rem;
   text-align: center;
-  animation: neonRainbow 6s ease-in-out infinite;
+  color: #58a6ff; /* calm blue */
   text-shadow:
-    0 0 5px #00ffff,
-    0 0 15px #ff00ff,
-    0 0 20px #ff4500,
-    0 0 30px #39ff14,
-    0 0 40px #ffff00;
+    0 0 5px #58a6ff,
+    0 0 10px #58a6ff;
 }
+
 
 /* ========== PROFILE STYLING ========== */
 .profile-pic {
