@@ -45,13 +45,70 @@
   </nav>
 
   <main class="container">
-    <!-- Your sections go here (About, Education, Skills, etc.) -->
+
+    <!-- About Section -->
+    <section id="about" class="tab-content active reveal">
+      <h2>&lt;About Me&gt;</h2>
+      <p>Hello! I'm Moyantha Ayair — a Computer Science student with a passion for building, learning, and problem-solving through code. 🚀</p>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="tab-content reveal">
+      <h2>&lt;Education&gt;</h2>
+      <ul>
+        <li><strong>UKZN</strong> – BSc Computer Science & IT (2024–Present)</li>
+        <li><strong>Kharwastan Secondary</strong> – NSC (2019–2023): 5 distinctions, IT award</li>
+        <li><strong>Willow Park Primary</strong> – Prefect, Amesa (2017–2018)</li>
+        <li><strong>Westville Hindu Primary</strong> – Prefect, Top 3 Academic (2009–2017)</li>
+      </ul>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="tab-content reveal">
+      <h2>&lt;Skills&gt;</h2>
+      <ul>
+        <li>Java, Python, C++, JavaScript</li>
+        <li>MS Office Suite (Word, Excel, PowerPoint, Access)</li>
+        <li>Fluent in: English, Tamil, Afrikaans, Zulu</li>
+        <li>Leadership & Teamwork</li>
+        <li>Lean Six Sigma – White Belt</li>
+      </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="tab-content reveal">
+      <h2>&lt;Projects&gt;</h2>
+      <p><em>No projects yet — stay tuned!</em></p>
+    </section>
+
+    <!-- Social Section -->
+    <section id="social" class="tab-content reveal">
+      <h2>&lt;Social&gt;</h2>
+      <div class="social-icons">
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/your-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:moyanthaayair@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="tab-content reveal">
+      <h2>&lt;Languages&gt;</h2>
+      <div class="languages-icons">
+        <i class="devicon-python-plain colored" title="Python"></i>
+        <i class="devicon-java-plain colored" title="Java"></i>
+        <i class="devicon-cplusplus-plain colored" title="C++"></i>
+        <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+      </div>
+    </section>
+
   </main>
 
   <footer>
     <p>made with &lt;/&gt; by Moyantha Ayair</p>
   </footer>
 
+  <!-- Matrix + Tab Switch Scripts -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const canvas = document.getElementById("matrix");
@@ -97,6 +154,7 @@
         drops = Array(cols).fill(0);
       });
 
+      // Tabs logic
       const buttons = document.querySelectorAll(".tab-btn");
       const tabs = document.querySelectorAll(".tab-content");
       buttons.forEach((btn) => {
@@ -108,6 +166,7 @@
         });
       });
 
+      // Reveal effect
       const revealElements = document.querySelectorAll(".reveal");
       const observer = new IntersectionObserver(
         (entries) => {
