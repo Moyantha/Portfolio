@@ -5,12 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moyantha Ayair | Portfolio</title>
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+  <!-- Normalize CSS for cross-browser consistency -->
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" />
 
-  <!-- CSS -->
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+  />
+
+  <!-- Your custom CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -19,7 +33,8 @@
 
   <header class="terminal-header">
     <div class="terminal-line">
-      <span class="green-text">moyantha@portfolio:~$</span><span class="blinking-cursor">|</span>
+      <span class="green-text">moyantha@portfolio:~$</span
+      ><span class="blinking-cursor">|</span>
     </div>
 
     <div class="profile-header">
@@ -39,20 +54,36 @@
   </nav>
 
   <main class="container">
-
     <!-- About Section -->
     <section id="about" class="tab-content active reveal">
       <h2>&lt;About Me&gt;</h2>
 
       <div class="about-box">
         <h3>👋🏽 Hey, I’m Moyantha Ayair</h3>
-        <p class="subheading">Computer Science student | Math lover | Future AI innovator</p>
+        <p class="subheading">
+          Computer Science student | Math lover | Future AI innovator
+        </p>
 
-        <p>I’m a Computer Science student at UKZN with a deep love for mathematics and a passion for creating meaningful technology.</p>
+        <p>
+          I’m a Computer Science student at UKZN with a deep love for
+          mathematics and a passion for creating meaningful technology.
+        </p>
 
-        <p>With a strong foundation in maths and computing, I approach problem-solving with clarity and curiosity. My academic journey — marked by distinctions and a Dean’s Commendation — reflects my dedication and drive to grow, but this is just the beginning.</p>
+        <p>
+          With a strong foundation in maths and computing, I approach
+          problem-solving with clarity and curiosity. My academic journey —
+          marked by distinctions and a Dean’s Commendation — reflects my
+          dedication and drive to grow, but this is just the beginning.
+        </p>
 
-        <p>💻 <strong>My goal is to start small as a software developer</strong>, building real-world solutions and sharpening my technical skills. Over time, I aim to integrate my work with <strong>Artificial Intelligence and Large Language Models (LLMs)</strong> to build intelligent, ethical systems that create meaningful, positive impact.</p>
+        <p>
+          💻 <strong>My goal is to start small as a software developer</strong>,
+          building real-world solutions and sharpening my technical skills.
+          Over time, I aim to integrate my work with
+          <strong>Artificial Intelligence and Large Language Models (LLMs)</strong>
+          to build intelligent, ethical systems that create meaningful, positive
+          impact.
+        </p>
 
         <h4>🌱 What drives me</h4>
         <ul class="styled-list">
@@ -62,9 +93,15 @@
           <li>🌍 A dream of contributing to tech that uplifts and empowers</li>
         </ul>
 
-        <p>This portfolio is a window into my journey — where I am, what I’m creating, and where I’m headed. I’m always open to collaboration, mentorship, and growth.</p>
+        <p>
+          This portfolio is a window into my journey — where I am, what I’m
+          creating, and where I’m headed. I’m always open to collaboration,
+          mentorship, and growth.
+        </p>
 
-        <p class="final-line"><strong>Let’s connect, create, and code a better future — together.</strong></p>
+        <p class="final-line">
+          <strong>Let’s connect, create, and code a better future — together.</strong>
+        </p>
       </div>
     </section>
 
@@ -101,9 +138,15 @@
     <section id="social" class="tab-content reveal">
       <h2>&lt;Social&gt;</h2>
       <div class="social-icons">
-        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/your-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:moyanthaayair@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/yourusername" target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://linkedin.com/in/your-link" target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="mailto:moyanthaayair@gmail.com"
+          ><i class="fas fa-envelope"></i
+        ></a>
       </div>
     </section>
 
@@ -117,16 +160,82 @@
         <i class="devicon-javascript-plain colored" title="JavaScript"></i>
       </div>
     </section>
-
   </main>
 
   <footer>
     <p>made with &lt;/&gt; by Moyantha Ayair</p>
   </footer>
 
-  <!-- Scripts (unchanged) -->
+  <!-- Scripts -->
   <script>
-    // JS logic stays the same
+    document.addEventListener("DOMContentLoaded", () => {
+      const canvas = document.getElementById("matrix");
+      const ctx = canvas.getContext("2d");
+      let w = window.innerWidth;
+      let h = window.innerHeight;
+      const scale = window.devicePixelRatio || 1;
+      canvas.width = w * scale;
+      canvas.height = h * scale;
+      canvas.style.width = w + "px";
+      canvas.style.height = h + "px";
+      ctx.scale(scale, scale);
+      ctx.textBaseline = "top";
+      ctx.font = "bold 16px monospace";
+
+      let cols = Math.floor(w / 16);
+      let drops = Array(cols).fill(0);
+
+      function drawMatrix() {
+        ctx.fillStyle = "rgba(0,0,0,0.05)";
+        ctx.fillRect(0, 0, w, h);
+        ctx.fillStyle = "#00ff66";
+        drops.forEach((y, i) => {
+          const text = String.fromCharCode(0x30a0 + Math.random() * 96);
+          ctx.fillText(text, i * 16 + 8, y * 16);
+          drops[i] = y * 16 > h && Math.random() > 0.975 ? 0 : y + 1;
+        });
+      }
+
+      setInterval(drawMatrix, 50);
+
+      window.addEventListener("resize", () => {
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = w * scale;
+        canvas.height = h * scale;
+        canvas.style.width = w + "px";
+        canvas.style.height = h + "px";
+        ctx.scale(scale, scale);
+        cols = Math.floor(w / 16);
+        drops = Array(cols).fill(0);
+      });
+
+      const buttons = document.querySelectorAll(".tab-btn");
+      const tabs = document.querySelectorAll(".tab-content");
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          buttons.forEach((b) => b.classList.remove("active"));
+          tabs.forEach((t) => t.classList.remove("active"));
+          btn.classList.add("active");
+          document.getElementById(btn.dataset.tab).classList.add("active");
+        });
+      });
+
+      const revealElements = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      revealElements.forEach((el) => observer.observe(el));
+    });
   </script>
 </body>
 </html>
