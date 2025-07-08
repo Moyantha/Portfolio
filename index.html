@@ -259,5 +259,20 @@
    };
  </script>
 
+<script>
+   // Disclaimer banner dismiss logic
+   const banner = document.getElementById("disclaimerBanner");
+   const dismissBtn = document.getElementById("dismissDisclaimer");
+
+   if (localStorage.getItem("dismissedDisclaimer")) {
+     banner.style.display = "none";
+   }
+
+   dismissBtn.addEventListener("click", () => {
+   banner.style.display = "none";
+   localStorage.setItem("dismissedDisclaimer", "true");
+  });
+ </script>
+	
 </body>
 </html>
