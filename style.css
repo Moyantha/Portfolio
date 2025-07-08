@@ -211,3 +211,31 @@ canvas#matrix {
     padding: 1rem;
   }
 }
+
+.about-card {
+  padding: 1.5rem;
+  background: #161b22;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
+  line-height: 1.6;
+  color: #d2dfff;
+}
+
+.about-card .intro {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 1rem;
+  color: #00ff66;
+  font-weight: bold;
+}
+
+.about-list {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  list-style-type: "✨ ";
+}
+
+.about-list li {
+  margin: 0.5rem 0;
+  border: none;
+  color: #c9d1d9;
+}
