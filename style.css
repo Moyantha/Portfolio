@@ -290,3 +290,21 @@ canvas#matrix {
   margin-bottom: 0.5rem;
 }
 
+.disclaimer-banner button {
+  margin-left: 1rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #0d1117;
+  color: #ffcc00;
+  border: 2px solid #ffcc00;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.disclaimer-banner button:hover {
+  background-color: #ffcc00;
+  color: #0d1117;
+}
+
+
