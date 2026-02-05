@@ -290,4 +290,56 @@ canvas#matrix {
   margin-bottom: 0.5rem;
 }
 
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  background: #161b22;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0, 255, 102, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(88, 166, 255, 0.35);
+}
+
+.project-icon {
+  font-size: 2.4rem;
+  color: #00ff66;
+  margin-bottom: 0.8rem;
+}
+
+.project-card h3 {
+  color: #58a6ff;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: #c9d1d9;
+  line-height: 1.5;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #00ff66;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+
 
