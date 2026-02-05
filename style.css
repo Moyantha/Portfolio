@@ -395,47 +395,64 @@ canvas#matrix {
 }
 
 /* Experience & Hackathon – Refined Styling */
-.experience-card,
-.hackathon-card {
-  background: linear-gradient(135deg, #161b22, #0d1117);
-  border-left: 4px solid #00ff66;
-  padding: 1.5rem;
-  border-radius: 10px;
+/* Experience – Refined */
+.experience-card {
+  padding: 1.2rem 1.5rem;
   margin-top: 1.5rem;
+  border-left: 3px solid #00ff66;
+  background: rgba(22, 27, 34, 0.85);
 }
 
-.experience-card h3,
-.hackathon-card h3 {
+.experience-card h3 {
   color: #58a6ff;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 
-.experience-meta,
-.hackathon-meta {
-  font-size: 0.85rem;
+.experience-meta {
+  font-size: 0.8rem;
   color: #8b949e;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   display: block;
 }
 
-.experience-list,
-.hackathon-list {
+.experience-list {
   list-style: none;
   padding-left: 0;
 }
 
-.experience-list li::before,
-.hackathon-list li::before {
-  content: "› ";
+.experience-list li {
+  margin-bottom: 0.5rem;
+  color: #c9d1d9;
+}
+
+.experience-list li::before {
+  content: "$ ";
   color: #00ff66;
   font-weight: bold;
 }
 
-.experience-list li,
-.hackathon-list li {
-  margin-bottom: 0.6rem;
-  color: #c9d1d9;
+.experience-links {
+  margin-top: 0.8rem;
 }
+
+.experience-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+  color: #00ff66;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.experience-links a i {
+  margin-right: 0.3rem;
+}
+
+.experience-links a:hover {
+  text-decoration: underline;
+}
+
+
 
 .hackathon-card a {
   display: inline-block;
