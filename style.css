@@ -380,6 +380,62 @@ canvas#matrix {
   border: none;
 }
 
+/* Experience & Hackathon – Refined Styling */
+.experience-card,
+.hackathon-card {
+  background: linear-gradient(135deg, #161b22, #0d1117);
+  border-left: 4px solid #00ff66;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+}
+
+.experience-card h3,
+.hackathon-card h3 {
+  color: #58a6ff;
+  margin-bottom: 0.3rem;
+}
+
+.experience-meta,
+.hackathon-meta {
+  font-size: 0.85rem;
+  color: #8b949e;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.experience-list,
+.hackathon-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.experience-list li::before,
+.hackathon-list li::before {
+  content: "› ";
+  color: #00ff66;
+  font-weight: bold;
+}
+
+.experience-list li,
+.hackathon-list li {
+  margin-bottom: 0.6rem;
+  color: #c9d1d9;
+}
+
+.hackathon-card a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #00ff66;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hackathon-card a:hover {
+  text-decoration: underline;
+}
+
+
 
 
 
