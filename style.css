@@ -341,5 +341,13 @@ canvas#matrix {
   text-decoration: underline;
 }
 
+.disabled-link {
+  color: #8b949e;
+  cursor: not-allowed;
+  pointer-events: none;
+  font-style: italic;
+}
+
+
 
 
