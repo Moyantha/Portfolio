@@ -348,6 +348,39 @@ canvas#matrix {
   font-style: italic;
 }
 
+/* Experience */
+.experience-card {
+  background: #161b22;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 255, 102, 0.2);
+  margin-top: 1.5rem;
+}
+
+.experience-card h3 {
+  color: #58a6ff;
+  margin-bottom: 0.3rem;
+}
+
+.experience-meta {
+  font-size: 0.85rem;
+  color: #8b949e;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.experience-list {
+  list-style-type: "➤ ";
+  padding-left: 1rem;
+}
+
+.experience-list li {
+  margin-bottom: 0.6rem;
+  color: #c9d1d9;
+  border: none;
+}
+
+
 
 
 
