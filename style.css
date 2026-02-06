@@ -1,4 +1,6 @@
-/* Reset & Base */
+/* =========================
+   RESET & BASE
+========================= */
 * {
   box-sizing: border-box;
 }
@@ -11,7 +13,25 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Terminal Header */
+/* =========================
+   DISCLAIMER
+========================= */
+.disclaimer-banner {
+  background-color: #ffcc00;
+  color: #0d1117;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 2px solid #30363d;
+  box-shadow: 0 2px 5px rgba(255, 204, 0, 0.4);
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================
+   TERMINAL HEADER
+========================= */
 .terminal-header {
   padding: 2rem 1.5rem 1rem;
   text-align: center;
@@ -36,21 +56,20 @@ body {
   50% { opacity: 0; }
 }
 
-/* Profile Header */
+/* =========================
+   PROFILE HEADER
+========================= */
 .profile-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .profile-pic {
   border-radius: 50%;
   width: clamp(100px, 30vw, 130px);
-  height: auto;
-  object-fit: cover;
   border: 3px solid #30363d;
-  box-shadow: 0 0 12px #0f0;
+  box-shadow: 0 0 12px #00ff66;
   margin-bottom: 1rem;
 }
 
@@ -66,7 +85,9 @@ header h1 {
   font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
-/* Tabs */
+/* =========================
+   NAV TABS
+========================= */
 .tabs {
   display: flex;
   justify-content: center;
@@ -92,7 +113,9 @@ header h1 {
   border-color: #58a6ff;
 }
 
-/* Content Container */
+/* =========================
+   CONTAINER
+========================= */
 .container {
   padding: 2rem 1.5rem;
   max-width: 1000px;
@@ -113,126 +136,15 @@ header h1 {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Lists */
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul li {
-  padding: 0.5rem 0;
-  border-bottom: 1px dashed #30363d;
-  color: #d2dfff;
-}
-
-/* Social Icons */
-.social-icons {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.social-icons.extended a {
-  margin: 0 0.7rem;
-}
-
-.social-icons.extended i {
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-icons.extended i:hover {
-  transform: scale(1.25);
-  color: #58a6ff;
-}
-
-.social-icons a {
-  font-size: 1.8rem;
-  margin: 0 1rem;
-  color: #8b949e;
-  transition: 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #00ff66;
-  transform: scale(1.2);
-}
-
-
-/* Languages */
-.languages-icons {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.languages-icons i {
-  font-size: 2.5rem;
-  margin: 0.8rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.languages-icons i:hover {
-  transform: scale(1.3);
-  color: #58a6ff;
-}
-
-/* Reveal Animations */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  padding: 1rem;
-  background: #161b22;
-  border-top: 1px solid #30363d;
-  color: #6e7681;
-  margin-top: 2rem;
-}
-
-/* Matrix Canvas Background */
-canvas#matrix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
-  opacity: 0.08;
-  pointer-events: none;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 600px) {
-  .tabs {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tabs button {
-    width: 100%;
-    padding: 0.6rem;
-  }
-
-  .container {
-    padding: 1rem;
-  }
-}
-
+/* =========================
+   ABOUT
+========================= */
 .about-card {
   padding: 1.5rem;
   background: #161b22;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
   line-height: 1.6;
-  color: #d2dfff;
 }
 
 .about-card .intro {
@@ -250,31 +162,12 @@ canvas#matrix {
 
 .about-list li {
   margin: 0.5rem 0;
-  border: none;
   color: #c9d1d9;
 }
 
-.disclaimer-banner {
-  background-color: #ffcc00;
-  color: #0d1117;
-  padding: 1rem 1.5rem;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.4;
-  border-bottom: 2px solid #30363d;
-  box-shadow: 0 2px 5px rgba(255, 204, 0, 0.4);
-  position: relative;
-  z-index: 10;
-}
-
-@media screen and (max-width: 600px) {
-  .disclaimer-banner {
-    font-size: 0.95rem;
-    padding: 0.8rem 1rem;
-  }
-}
-
+/* =========================
+   TIMELINE
+========================= */
 .timeline {
   display: flex;
   overflow-x: auto;
@@ -285,12 +178,12 @@ canvas#matrix {
 
 .timeline-item {
   min-width: 250px;
-  scroll-snap-align: start;
   background: #161b22;
   border-left: 4px solid #00ff66;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,255,102,0.2);
+  scroll-snap-align: start;
   transition: transform 0.3s ease;
 }
 
@@ -304,65 +197,9 @@ canvas#matrix {
   margin-bottom: 0.5rem;
 }
 
-/* Projects */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.project-card {
-  background: #161b22;
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 0 12px rgba(0, 255, 102, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 18px rgba(88, 166, 255, 0.35);
-}
-
-.project-icon {
-  font-size: 2.4rem;
-  color: #00ff66;
-  margin-bottom: 0.8rem;
-}
-
-.project-card h3 {
-  color: #58a6ff;
-  margin-bottom: 0.5rem;
-}
-
-.project-card p {
-  font-size: 0.9rem;
-  color: #c9d1d9;
-  line-height: 1.5;
-}
-
-.project-card a {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #00ff66;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.project-card a:hover {
-  text-decoration: underline;
-}
-
-.disabled-link {
-  color: #8b949e;
-  cursor: not-allowed;
-  pointer-events: none;
-  font-style: italic;
-}
-
-/* Experience */
+/* =========================
+   EXPERIENCE
+========================= */
 .experience-card {
   background: #161b22;
   padding: 1.5rem;
@@ -373,38 +210,12 @@ canvas#matrix {
 
 .experience-card h3 {
   color: #58a6ff;
-  margin-bottom: 0.3rem;
 }
 
 .experience-meta {
   font-size: 0.85rem;
   color: #8b949e;
-  display: block;
   margin-bottom: 1rem;
-}
-
-.experience-list {
-  list-style-type: "➤ ";
-  padding-left: 1rem;
-}
-
-.experience-list li {
-  margin-bottom: 0.6rem;
-  color: #c9d1d9;
-  border: none;
-}
-
-
-
-.experience-card h3 {
-  color: #58a6ff;
-  margin-bottom: 0.2rem;
-}
-
-.experience-meta {
-  font-size: 0.8rem;
-  color: #8b949e;
-  margin-bottom: 0.8rem;
   display: block;
 }
 
@@ -414,78 +225,24 @@ canvas#matrix {
 }
 
 .experience-list li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   color: #c9d1d9;
 }
 
-
-.experience-links {
-  margin-top: 0.8rem;
-}
-
 .experience-links a {
-  display: inline-block;
-  margin-right: 1rem;
-  font-size: 0.9rem;
   color: #00ff66;
   font-weight: 600;
+  margin-right: 1rem;
   text-decoration: none;
-}
-
-.experience-links a i {
-  margin-right: 0.3rem;
 }
 
 .experience-links a:hover {
   text-decoration: underline;
 }
 
-/* Experience */
-.experience-card {
-  background: #161b22;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 255, 102, 0.2);
-  margin-top: 1.5rem;
-}
-
-.experience-card h3 {
-  color: #58a6ff;
-  margin-bottom: 0.3rem;
-}
-
-.experience-meta {
-  font-size: 0.85rem;
-  color: #8b949e;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.experience-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.experience-list li {
-  margin-bottom: 0.6rem;
-  color: #c9d1d9;
-}
-
-
-
-.hackathon-card a {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #00ff66;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.hackathon-card a:hover {
-  text-decoration: underline;
-}
-
-/* Skills */
+/* =========================
+   SKILLS
+========================= */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -515,12 +272,153 @@ canvas#matrix {
 
 .skill-card h3 {
   color: #58a6ff;
-  margin-bottom: 0.4rem;
 }
 
-.skill-card p {
+/* =========================
+   PROJECTS & HACKATHONS
+========================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  background: #161b22;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0, 255, 102, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(88, 166, 255, 0.35);
+}
+
+.project-icon {
+  font-size: 2.4rem;
+  color: #00ff66;
+  margin-bottom: 0.8rem;
+}
+
+.project-card h3 {
+  color: #58a6ff;
+}
+
+.project-card p {
   font-size: 0.9rem;
-  color: #c9d1d9;
+}
+
+.project-card a {
+  color: #00ff66;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+.disabled-link {
+  color: #8b949e;
+  font-style: italic;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+.social-icons {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.social-icons.extended a {
+  margin: 0 0.7rem;
+  font-size: 1.8rem;
+  color: #8b949e;
+  transition: 0.3s ease;
+}
+
+.social-icons.extended a:hover {
+  color: #00ff66;
+  transform: scale(1.2);
+}
+
+/* =========================
+   LANGUAGES
+========================= */
+.languages-icons {
+  text-align: center;
+}
+
+.languages-icons i {
+  font-size: 2.5rem;
+  margin: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.languages-icons i:hover {
+  transform: scale(1.3);
+}
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   MATRIX BACKGROUND
+========================= */
+canvas#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #161b22;
+  border-top: 1px solid #30363d;
+  color: #6e7681;
+  margin-top: 2rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tabs button {
+    width: 100%;
+  }
+
+  .container {
+    padding: 1rem;
+  }
 }
 
 
