@@ -61,7 +61,6 @@
     <button class="tab-btn" data-tab="skills">Skills</button>
     <button class="tab-btn" data-tab="hackathons">Hackathons</button>
     <button class="tab-btn" data-tab="projects">Projects</button>
-    <button class="tab-btn" data-tab="collaboration">Collaboration</button>
     <button class="tab-btn" data-tab="contact">Contact</button>
   </nav>
 
@@ -288,6 +287,7 @@
           <i class="fa-solid fa-boxes-stacked project-icon"></i>
           <h3>Valdivian</h3>
           <p class="project-award">🎓 Final Year Project — Multi-threaded Inventory & Order Processing System</p>
+          <p class="project-collab">Built in collaboration with a fellow student</p>
           <div class="project-langs">
             <span class="lang-pill">C++</span>
             <span class="lang-pill">STL</span>
@@ -295,16 +295,7 @@
           </div>
           <p>
             A real-time inventory and order processing system that simulates
-            multiple customers placing orders concurrently. Built with
-            object-oriented design and STL containers, it uses
-            <code>std::thread</code>, <code>std::mutex</code> and
-            <code>std::lock_guard</code> to keep shared inventory data safe
-            from race conditions, <code>std::atomic</code> for unique order
-            IDs, and <code>shared_ptr</code> for automatic memory management
-            across components that reference the same product objects.
-            Stress-tested with 100+ products and concurrent orders on the
-            same item, with consistent stock totals and clean, non-interleaved
-            output every time.
+            multiple customers placing orders concurrently. 
           </p>
           <video class="project-video" controls preload="metadata" poster="images/valdivian-poster.jpg">
             <source src="videos/valdivian-demo.mp4" type="video/mp4" />
@@ -313,9 +304,6 @@
           <div class="project-links">
             <a href="https://github.com/Priashka/Valdivian" target="_blank">
               <i class="fa-brands fa-github"></i> Repository (private — request access)
-            </a>
-            <a href="#collaboration" class="tab-link" data-tab="collaboration">
-              <i class="fa-solid fa-people-group"></i> Team Project
             </a>
           </div>
         </div>
@@ -416,61 +404,6 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- COLLABORATION -->
-    <section id="collaboration" class="tab-content reveal">
-      <h2>&lt;Collaboration&gt;</h2>
-
-      <div class="about-card">
-        <p class="intro">🤝 I build well with others.</p>
-        <p>
-          Not everything here was built solo — some of my favourite work has come out
-          of team projects, hackathons and group modules, where I got to combine my
-          own skills with the strengths of fellow students. Below are the projects
-          built in collaboration with others; credit for these goes to the whole
-          team, not just me.
-        </p>
-      </div>
-
-      <div class="projects-grid">
-        <div class="project-card">
-          <i class="fa-solid fa-boxes-stacked project-icon"></i>
-          <h3>Valdivian</h3>
-          <p class="project-award">Built in collaboration with fellow students</p>
-          <div class="project-langs">
-            <span class="lang-pill">C++</span>
-            <span class="lang-pill">STL</span>
-          </div>
-          <p>
-            A multi-threaded inventory and order processing system — my final
-            year project, built together with a fellow student.
-          </p>
-          <div class="project-links">
-            <a href="#projects" class="tab-link" data-tab="projects">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> View Project
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <i class="fa-solid fa-people-group project-icon"></i>
-          <h3>CafConnect</h3>
-          <p class="project-award">Built in collaboration with fellow students</p>
-          <div class="project-langs">
-            <span class="lang-pill">Hackathon</span>
-          </div>
-          <p>
-            A campus food-ordering and operations solution, built as a team
-            during a university hackathon.
-          </p>
-          <div class="project-links">
-            <a href="#hackathons" class="tab-link" data-tab="hackathons">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> View Project
-            </a>
-          </div>
-        </div>
       </div>
     </section>
 
